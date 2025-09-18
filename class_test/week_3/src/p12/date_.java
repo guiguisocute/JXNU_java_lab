@@ -1,6 +1,6 @@
 package p12;
 
-import java.util.Scanner;
+// import java.util.Scanner;
 
 /*
 实现一个日期类，包含成员变量year,month,day分别表示年、月和日。
