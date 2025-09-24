@@ -74,39 +74,26 @@ class SeqList { // 顺序表结构=数组+表长
         int j = 0;
         for(int i : this.a){
             if(j < len)
-                res += i + " ";         //好像有更优的方法，但我懒得用了,只影响效率
+                res += i + " ";         //这个其实并不完美，因为字符串的加法（即连接），其实并不能操作容器，实质上是加完之后再自动new了一个string再转引用，所以如果数组很大，这个方法会炸堆
                 j++;
         }
         return res;
     }
 
 
-    void append(int[] b) {      //末尾加元素若不够size扩容一半
-        int j = len;
-        if((len + b.length) > a.length ){   // 数组有效数据还是得靠自己维护
-            int new_length = (int)(len + len * 0.5);
-            while (new_length < len + b.length) {
-                new_length = (int) (new_length + new_length * 0.5);
-            }
-            
-            int[] c = new int[new_length];
-            j = 0;
-            for(int i : a){
-                c[j] = i;
-                j++;
-            }
-            for(int i : b){
-                c[j] =i;
-                j++;
-            }
-            a = c;
-            len = j;
-        }else{
-            for(int i : b){
-                a[j] = i;
-                j++;
-            }
+    void append(int[] add){
+        int newlength = a.length;
+        while(a.length + add.length > newlength){
+            newlength = (int)(newlength * 1.5);
         }
+
+        int[] b = new int[newlength];
+        System.arraycopy(a, 0,b,0 ,len);
+        for(int i : add){
+            b[len] = i;
+            len++;
+        }
+        a = b;
     }
 
     void merge(SeqList y){
