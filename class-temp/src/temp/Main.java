@@ -25,15 +25,18 @@ class S_L{
 
     @Override
     public String toString(){
-        String res = "";
+        // String res = "";
+        StringBuilder res2 = new StringBuilder(1024);           //初始容量为16，传参自定义
         int j = 0;
         for(int i : arr){
             if(j < len){
-                res += i + " ";
+                // res += i + " ";     // 浪费内存，还会影响GC效率。
+                res2.append(i);     //apend直接在末尾插传参只有一个而且可以为任意值，insert可以在第一个传参中定义偏移量（插入位置）
+                res2.append(" ");
                 j++;
             }
         }
-        return res;
+        return res2.toString();
     }  
 
     void append(int[] in){

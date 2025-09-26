@@ -69,7 +69,7 @@ class martrix{
         // System.out.println(Arrays.deepToString(in.a));
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
-                System.out.print(in.a[i][j] + " ");
+                System.out.printf("%4d",in.a[i][j]);
             }
             System.out.println();
         }
