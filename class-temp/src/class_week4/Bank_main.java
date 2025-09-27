@@ -28,8 +28,7 @@ class bank{
 
     @Override
     public String toString() {
-        String res = name + "账户的余额为：" + value.toString();
-        return res;
+        return name + "账户的余额为：" + value.toString();
     }
 
     void transfer(bank B, String InValue){
