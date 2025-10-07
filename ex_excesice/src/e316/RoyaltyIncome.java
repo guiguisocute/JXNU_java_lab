@@ -1,0 +1,10 @@
+package e316;
+
+/**
+ * 稿费收入税率是20%
+ */
+public class RoyaltyIncome {
+
+	// TODO
+
+}
