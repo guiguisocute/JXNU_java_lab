@@ -6,5 +6,5 @@ package e317;
 public interface Income {
 
 	// TODO
-
+	abstract double getTax();
 }

@@ -13,6 +13,9 @@ public class Main {
 		Income[] incomes = new Income[] { new Income(3000), new SalaryIncome(7500), new RoyaltyIncome(12000) };
 		double total = 0;
 		// TODO:
+        for(Income i : incomes){
+            total += i.getTax();
+        }
 		System.out.println(total);
 	}
 
